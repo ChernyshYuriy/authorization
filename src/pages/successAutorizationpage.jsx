@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from "react";
+import "../css/successPage.css";
 
-class SuccessPage extends Component {
-    render() {
-        return (
-            <div>
-                2
-            </div>
-        );
-    }
+function SuccessPage(props) {
+  const userEmail = props.currentUser.user.email;
+  return (
+    <div className="success-page">
+      {userEmail
+        ? `You login with this email ${userEmail}`
+        : "Your authorization is failed"}
+    </div>
+  );
 }
 
 export default SuccessPage;

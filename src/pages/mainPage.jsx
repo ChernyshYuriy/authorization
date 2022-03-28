@@ -1,18 +1,26 @@
 import React, { Component } from "react";
-import GoogleAuthorization from "../components/googleAuthorization";
+import FormAuthorization from "../components/formAuthorization";
 import "../css/form.css";
-import CreateAccount from "./../components/createAccount";
-import Login from "./../components/login";
-
 class MainPage extends Component {
   state = {
-    showContent: "login",
+    showContent: "Login",
   };
+
+  changeFormContent = () => {
+    this.setState({
+      showContent:
+        this.state.showContent !== "Login" ? "Login" : "Create account"
+    });
+  };
+
   render() {
+    const content = this.state.showContent;
     return (
       <div className="form-container">
-        {this.state.showContent === "login" ? <Login /> : <CreateAccount />}
-        <GoogleAuthorization />
+        <FormAuthorization changeUser={this.props.changeUser} typeAction={content} />
+        <div className="clickable action-switcher" onClick={() => this.changeFormContent()}>
+          {`Switch to ${content !== "Login" ? "Login" : "Create account"}`}
+        </div>
       </div>
     );
   }
