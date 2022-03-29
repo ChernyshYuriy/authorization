@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import SuccessPage from "./pages/successAutorizationPage";
+import SuccessPage from "./pages/successAutorizationpage";
 import MainPage from "./pages/mainPage";
 
 function App() {
