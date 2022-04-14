@@ -14,12 +14,10 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<MainPage changeUser={changeUserInfo} />} />
-        {userInfo ? (
-          <Route
-            path="/success"
-            element={<SuccessPage currentUser={userInfo} />}
-          />
-        ) : null}
+        <Route
+          path="/success"
+          element={<SuccessPage currentUser={userInfo} />}
+        />
       </Routes>
     </div>
   );
